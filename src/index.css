@@ -2,41 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Luxury Event Management Design System - Shree Sawariya Events
+Premium gold, deep burgundy, and elegant gradients for Indian event industry
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Premium Event Palette */
+    --background: 350 20% 98%;
+    --foreground: 345 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 345 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 345 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Luxury Gold Primary */
+    --primary: 45 95% 50%;
+    --primary-foreground: 345 25% 15%;
+    --primary-glow: 45 100% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Deep Burgundy Secondary */
+    --secondary: 345 70% 25%;
+    --secondary-foreground: 45 95% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Elegant Rose Gold */
+    --muted: 15 25% 92%;
+    --muted-foreground: 345 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Warm Accent */
+    --accent: 25 85% 60%;
+    --accent-foreground: 345 25% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 45 95% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 15 15% 88%;
+    --input: 15 15% 88%;
+    --ring: 45 95% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Premium Gradients */
+    --gradient-luxury: linear-gradient(135deg, hsl(45 95% 50%), hsl(25 85% 60%));
+    --gradient-elegant: linear-gradient(180deg, hsl(345 70% 25%), hsl(345 60% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(345 70% 25%) 0%, hsl(25 85% 60%) 50%, hsl(45 95% 50%) 100%);
+    --gradient-overlay: linear-gradient(135deg, hsl(345 70% 25% / 0.9), hsl(45 95% 50% / 0.1));
+
+    /* Elegant Shadows */
+    --shadow-luxury: 0 20px 60px -10px hsl(45 95% 50% / 0.3);
+    --shadow-elegant: 0 10px 40px -10px hsl(345 70% 25% / 0.2);
+    --shadow-glow: 0 0 50px hsl(45 100% 65% / 0.4);
+
+    /* Smooth Animations */
+    --transition-luxury: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-elegant: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* Typography Scale */
+    --font-size-hero: clamp(2.5rem, 8vw, 4rem);
+    --font-size-h1: clamp(2rem, 6vw, 3rem);
+    --font-size-h2: clamp(1.5rem, 4vw, 2.25rem);
+    --font-size-h3: clamp(1.25rem, 3vw, 1.75rem);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +84,35 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Elegant Evening Theme */
+    --background: 345 35% 8%;
+    --foreground: 45 95% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 345 30% 12%;
+    --card-foreground: 45 95% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 345 30% 12%;
+    --popover-foreground: 45 95% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 45 95% 50%;
+    --primary-foreground: 345 35% 8%;
+    --primary-glow: 45 100% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 345 50% 20%;
+    --secondary-foreground: 45 95% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 345 25% 15%;
+    --muted-foreground: 45 30% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 85% 60%;
+    --accent-foreground: 345 35% 8%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 45 95% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 345 25% 20%;
+    --input: 345 25% 20%;
+    --ring: 45 95% 50%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +130,162 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Text Styles */
+  .hero-text {
+    @apply text-[var(--font-size-hero)] font-bold leading-none tracking-tight;
+    background: var(--gradient-luxury);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .heading-1 {
+    @apply text-[var(--font-size-h1)] font-bold leading-tight tracking-tight text-foreground;
+  }
+
+  .heading-2 {
+    @apply text-[var(--font-size-h2)] font-semibold leading-tight tracking-tight text-foreground;
+  }
+
+  .heading-3 {
+    @apply text-[var(--font-size-h3)] font-semibold leading-snug text-foreground;
+  }
+
+  /* Luxury Button Variants */
+  .btn-luxury {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95;
+    background: var(--gradient-luxury);
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .btn-elegant {
+    @apply bg-secondary text-secondary-foreground font-medium px-6 py-3 rounded-lg border border-secondary/20 transition-all duration-300 hover:bg-secondary/90 hover:shadow-lg;
+  }
+
+  .btn-ghost-luxury {
+    @apply bg-transparent text-primary border-2 border-primary/30 font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:bg-primary/10 hover:border-primary/60;
+  }
+
+  /* WhatsApp Float Button */
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:bg-green-600 hover:scale-110 active:scale-95;
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.3);
+  }
+
+  /* Card Styles */
+  .card-luxury {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 transition-all duration-300 hover:bg-card hover:shadow-lg hover:border-border;
+  }
+
+  .card-elegant {
+    @apply bg-gradient-to-br from-card to-muted/20 border border-border/30 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+  }
+
+  /* Image Effects */
+  .image-elegant {
+    @apply rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl;
+  }
+
+  .image-hero {
+    @apply w-full h-full object-cover transition-all duration-700 hover:scale-105;
+  }
+
+  /* Animation Classes */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .fade-in-left {
+    animation: fadeInLeft 0.6s ease-out forwards;
+  }
+
+  .fade-in-right {
+    animation: fadeInRight 0.6s ease-out forwards;
+  }
+
+  .slide-in-bottom {
+    animation: slideInBottom 0.8s ease-out forwards;
+  }
+
+  .luxury-glow {
+    animation: luxuryGlow 3s ease-in-out infinite;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-luxury);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-elegant {
+    background: var(--gradient-elegant);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luxuryGlow {
+  0%, 100% {
+    text-shadow: 0 0 20px hsl(45 95% 50% / 0.5);
+  }
+  50% {
+    text-shadow: 0 0 40px hsl(45 95% 50% / 0.8), 0 0 60px hsl(25 85% 60% / 0.4);
   }
 }
