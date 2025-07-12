@@ -163,17 +163,18 @@ All colors MUST be HSL.
 
   /* Luxury Button Variants */
   .btn-luxury {
-    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95;
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-110 active:scale-95;
     background: var(--gradient-luxury);
     box-shadow: var(--shadow-luxury);
+    animation: luxuryPulse 2s infinite;
   }
 
   .btn-elegant {
-    @apply bg-secondary text-secondary-foreground font-medium px-6 py-3 rounded-lg border border-secondary/20 transition-all duration-300 hover:bg-secondary/90 hover:shadow-lg;
+    @apply bg-secondary text-secondary-foreground font-medium px-6 py-3 rounded-lg border border-secondary/20 transition-all duration-500 hover:bg-secondary/90 hover:shadow-xl hover:scale-105;
   }
 
   .btn-ghost-luxury {
-    @apply bg-transparent text-primary border-2 border-primary/30 font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:bg-primary/10 hover:border-primary/60;
+    @apply bg-transparent text-primary border-2 border-primary/30 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:bg-primary/10 hover:border-primary/80 hover:scale-105;
   }
 
   /* WhatsApp Float Button */
@@ -184,41 +185,51 @@ All colors MUST be HSL.
 
   /* Card Styles */
   .card-luxury {
-    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 transition-all duration-300 hover:bg-card hover:shadow-lg hover:border-border;
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 transition-all duration-500 hover:bg-card hover:shadow-2xl hover:border-border hover:scale-105;
+    backdrop-filter: blur(10px);
   }
 
   .card-elegant {
-    @apply bg-gradient-to-br from-card to-muted/20 border border-border/30 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+    @apply bg-gradient-to-br from-card to-muted/20 border border-border/30 rounded-xl p-5 transition-all duration-500 hover:shadow-xl hover:scale-105;
+    backdrop-filter: blur(8px);
   }
 
   /* Image Effects */
   .image-elegant {
-    @apply rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl;
+    @apply rounded-xl overflow-hidden shadow-lg transition-all duration-700 hover:shadow-2xl hover:scale-105;
   }
 
   .image-hero {
-    @apply w-full h-full object-cover transition-all duration-700 hover:scale-105;
+    @apply w-full h-full object-cover transition-all duration-1000 hover:scale-110;
   }
 
   /* Animation Classes */
   .fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fadeInUp 0.8s ease-out forwards;
   }
 
   .fade-in-left {
-    animation: fadeInLeft 0.6s ease-out forwards;
+    animation: fadeInLeft 0.8s ease-out forwards;
   }
 
   .fade-in-right {
-    animation: fadeInRight 0.6s ease-out forwards;
+    animation: fadeInRight 0.8s ease-out forwards;
   }
 
   .slide-in-bottom {
-    animation: slideInBottom 0.8s ease-out forwards;
+    animation: slideInBottom 1s ease-out forwards;
   }
 
   .luxury-glow {
-    animation: luxuryGlow 3s ease-in-out infinite;
+    animation: luxuryGlow 4s ease-in-out infinite;
+  }
+
+  .cinematic-scale {
+    animation: cinematicScale 0.8s ease-out forwards;
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
   }
 
   /* Gradient Text */
@@ -287,5 +298,34 @@ All colors MUST be HSL.
   }
   50% {
     text-shadow: 0 0 40px hsl(45 95% 50% / 0.8), 0 0 60px hsl(25 85% 60% / 0.4);
+  }
+}
+
+@keyframes luxuryPulse {
+  0%, 100% {
+    box-shadow: var(--shadow-luxury);
+  }
+  50% {
+    box-shadow: 0 25px 80px -10px hsl(45 95% 50% / 0.4);
+  }
+}
+
+@keyframes cinematicScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
