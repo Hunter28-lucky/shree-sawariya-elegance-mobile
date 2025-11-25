@@ -42,9 +42,9 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative h-screen overflow-hidden">
+    <section id="home" className="relative h-screen overflow-hidden bg-black">
       {/* Background Slider */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-black">
         {slides.map((slide, index) => (
           <div
             key={index}
